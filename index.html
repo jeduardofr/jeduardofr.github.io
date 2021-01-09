@@ -2,22 +2,60 @@
 <html lang="en">
 <head>
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Claytro</title>
-    <link rel="stylesheet" href="/assets/css/app.css">
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/blog/">Blog</a>
-    </nav>
-    <h1>Claytro</h1>
-    <section>
-        <h1 class="text-indigo-600">Hello</h1>
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>
+    Eduardo Fuentes
+    
+        | Home
+    
+</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
 
-<a href="/blog" class="text-green-600 hover:text-green-500">Something</a>
-    </section>
+</head>
+<body class="flex flex-col min-h-screen font-sans" x-data="{ darkMode: false }" :class="darkMode && 'dark'"  x-init="() => {
+        const mode = localStorage.getItem('mode');
+        darKMode = mode && mode === 'dark';
+    }">
+    <div class="dark:bg-gray-800">
+    <nav class="container mx-auto max-w-screen-lg p-4 flex flex-row justify-between">
+        <ul class="flex flex-row space-x-4">
+            <li>
+                <a class="text-indigo-600 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-gray-200" href="/">Home</a>
+            </li>
+            <li>
+                <a class="text-indigo-600 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-gray-200" href="/templates">Templates</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <button class="hover:text-indigo-600 focus:outline-none" @click="darkMode = !darkMode">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+    <div class="flex-1 bg-gray-100 dark:bg-gray-600">
+        <section class="container mx-auto max-w-screen-lg pt-8">
+    <h1 class="prose prose-2xl text-gray-800 dark:text-gray-100">Tailwind CSS Templates</h1>
+</section>
+
+    </div>
+
+    <div class="bg-gray-100 dark:bg-gray-800 shadow">
+    <footer class="container mx-auto max-w-screen-lg p-4">
+        <h1 class="text-gray-800 dark:text-gray-100">Footer</h1>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
 </body>
 </html>
